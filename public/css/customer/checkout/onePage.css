@@ -215,7 +215,7 @@
 .common_mainPanel .checkoutProcessBlock li .operationBlock .inputUnit .selectBorder option{
     padding: 0 4px;
 }
-.common_mainPanel .checkoutProcessBlock li .operationBlock .continueButtton{
+.common_mainPanel .checkoutProcessBlock li .operationBlock .continueButton{
     display:block;
     width: 100px;
     height: 30px;
@@ -274,7 +274,7 @@
 .common_mainPanel .checkoutProcessBlock .login .loginBlock .forgotRow a{
     text-decoration: underline;
 }
-.common_mainPanel .checkoutProcessBlock .login .loginBlock .continueButtton{
+.common_mainPanel .checkoutProcessBlock .login .loginBlock .continueButton{
     margin-top: 25px;
     border: none;
     cursor: pointer;
@@ -487,7 +487,7 @@
         width: auto;
     }
 
-    .common_mainPanel .checkoutProcessBlock li .operationBlock .continueButtton {
+    .common_mainPanel .checkoutProcessBlock li .operationBlock .continueButton {
         width: 100%;
     }
     .common_mainPanel .checkoutProcessBlock .paymentInformation .descript a{

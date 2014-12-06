@@ -189,26 +189,26 @@
                     </ul>
                     </div>
                 </div>
-            </li><li>
-                <div class="btnBlock"><a href="#"><span>童装</span></a><i></i></div>
-            </li><li>
-                <div class="btnBlock"><a href="#"><span>内衣</span></a><i></i></div>
-            </li><li>
-                <div class="btnBlock"><a href="#"><span>配饰</span></a><i></i></div>
-            </li><li>
-                <div class="btnBlock"><a href="#"><span>腕表首饰</span></a><i></i></div>
-            </li><li>
-                <div class="btnBlock"><a href="#"><span>护肤美容</span></a><i></i></div>
-            </li><li>
-                <div class="btnBlock"><a href="#"><span>家居生活</span></a><i></i></div>
-            </li><li>
-                <div class="btnBlock"><a href="#"><span>藝術</span></a><i></i></div>
-            </li><li>
-                <div class="btnBlock"><a href="#"><span>Discover</span></a><i></i></div>
-            </li>
+                </li><li>
+                    <div class="btnBlock"><a href="#"><span>童装</span></a><i></i></div>
+                </li><li>
+                    <div class="btnBlock"><a href="#"><span>内衣</span></a><i></i></div>
+                </li><li>
+                    <div class="btnBlock"><a href="#"><span>配饰</span></a><i></i></div>
+                </li><li>
+                    <div class="btnBlock"><a href="#"><span>腕表首饰</span></a><i></i></div>
+                </li><li>
+                    <div class="btnBlock"><a href="#"><span>护肤美容</span></a><i></i></div>
+                </li><li>
+                    <div class="btnBlock"><a href="#"><span>家居生活</span></a><i></i></div>
+                </li><li>
+                    <div class="btnBlock"><a href="#"><span>藝術</span></a><i></i></div>
+                </li><li>
+                    <div class="btnBlock"><a href="#"><span>Discover</span></a><i></i></div>
+                </li>
             </ul>
         </div>
-
+        <div class="popWindow"></div>
         <div class="common_mainPanel">
             <div class="common_centerBlock">
                 <div class="topSpace"></div>
@@ -259,10 +259,381 @@
                     </ul>
                 </div>
 
+                <ul class="checkoutProcessBlock">
+                    <li class="titleRow">Checkout</li>
+                    <li class="billingInformation action">
+                        <div class="titleBar">
+                            <span class="stepNum">1</span>
+                            <h2>Billing Information</h2>
+                            <a href="javascript:;"><span>Edit</span><i></i></a>
+                        </div>
+                        <div class="operationBlock action">
+                            <div class="inputUnit">
+                                <div class="label"><i>*</i>Select a billing address from your address book or enter a new </div>
+                                <div class="selectBorder">
+                                    <select name="billing[address]">
+                                        <option value="1" selected="selected">yin yafeng, 南山桃源村东 中爱大厦, 广州, 深圳 123456, 中国</option>
+                                        <option value="2">yin11 yafeng1111, 撒撒撒撒撒撒撒撒撒撒撒, ccc, zzzzzzz 11111, 中国</option>
+                                        <option value="3">yin yafeng122, 中国 北京 北京 西城区啊十大, 北京, 北京 433300, 中国</option>
+                                        <option value="">新地址</option>
+                                    </select>
+                                </div>
+                                <div class="warn">&nbsp;</div>
+                            </div>
 
+                            <div class="inputUnit halfLeft">
+                                <div class="label"><i>*</i>First Name</div>
+                                <div class="inputBorder"><input name="billing[FN]" type="text"/></div>
+                                <div class="warn">请输入名字!</div>
+                            </div>
+                            <div class="inputUnit halfRight">
+                                <div class="label"><i>*</i>Last Name</div>
+                                <div class="inputBorder"><input name="billing[LN]" type="text"/></div>
+                                <div class="warn">请输入姓氏!</div>
+                            </div>
+                            <div class="inputUnit halfLeft">
+                                <div class="label">Company</div>
+                                <div class="inputBorder"><input name="billing[company]" type="text"/></div>
+                                <div class="warn">&nbsp;</div>
+                            </div>
 
+                            <div class="inputUnit">
+                                <div class="label"><i>*</i>Address</div>
+                                <div class="inputBorder"><input name="billing[address]" type="text"/></div>
+                                <div class="warn">请输入地址!</div>
+                            </div>
 
+                            <div class="inputUnit halfLeft">
+                                <div class="label"><i>*</i>Country</div>
+                                <div class="selectBorder">
+                                    <select name="billing[country]">
+                                        <option value="US" selected="selected">美国</option>
+                                    </select>
+                                </div>
+                                <div class="warn">请输入国家!</div>
+                            </div>
+                            <div class="inputUnit halfRight">
+                                <div class="label"><i>*</i>State/Province</div>
+                                <div class="selectBorder">
+                                    <select name="billing[state]">
+                                        <option value="">请选择州、省</option>
+                                        <option title="Alabama" value="1">Alabama</option>
+                                        <option title="Alaska" value="2">Alaska</option>
+                                        <option title="American Samoa" value="3">American Samoa</option>
+                                        <option title="Arizona" value="4">Arizona</option>
+                                        <option title="Arkansas" value="5">Arkansas</option>
+                                        <option title="Armed Forces Africa" value="6">Armed Forces Africa</option>
+                                        <option title="Armed Forces Americas" value="7">Armed Forces Americas</option>
+                                        <option title="Armed Forces Canada" value="8">Armed Forces Canada</option>
+                                        <option title="Armed Forces Europe" value="9">Armed Forces Europe</option>
+                                        <option title="Armed Forces Middle East" value="10">Armed Forces Middle East</option>
+                                        <option title="Armed Forces Pacific" value="11">Armed Forces Pacific</option>
+                                        <option title="California" value="12">California</option>
+                                        <option title="Colorado" value="13">Colorado</option>
+                                        <option title="Connecticut" value="14">Connecticut</option>
+                                    </select>
+                                </div>
+                                <div class="warn">请输入州/省!</div>
+                            </div>
+                            <div class="inputUnit halfLeft">
+                                <div class="label"><i>*</i>City</div>
+                                <div class="inputBorder"><input name="billing[city]" type="text"/></div>
+                                <div class="warn">请输入城市!</div>
+                            </div>
+                            <div class="inputUnit halfRight">
+                                <div class="label"><i>*</i>Zip/Postal Code</div>
+                                <div class="inputBorder"><input name="billing[zip]" type="text"/></div>
+                                <div class="warn">请输入邮编!</div>
+                            </div>
+                            <div class="inputUnit halfLeft">
+                                <div class="label"><i>*</i>Telephone</div>
+                                <div class="inputBorder"><input name="billing[tel]" type="text"/></div>
+                                <div class="warn">请输入电话!</div>
+                            </div>
+                            <div class="inputUnit halfRight">
+                                <div class="label">Fax</div>
+                                <div class="inputBorder"><input name="billing[fax]" type="text"/></div>
+                                <div class="warn">&nbsp;</div>
+                            </div>
 
+                            <div class="saveRow">
+                                <input type="checkbox" name="save_in_address_book" /><span>Save in address book</span>
+                            </div>
+                            <div class="addressRow">
+                                <div>
+                                    <input name="group02" checked="true" type="radio" value="this" /><span>Ship to this address</span>
+                                </div>
+                                <div>
+                                    <input name="group02" type="radio" value="different" /><span>Ship to different address</span>
+                                </div>
+                            </div>
+
+                            <div class="continueRow">
+                                <a class="continueButton"  href="javascript:;">CONTINUE</a>
+                            </div>
+                            <div class="loadingRow">
+                                <img src="../../public/img/customer/loader.gif" />
+                                <span>Loading next step... </span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="shippingInformation">
+                        <div class="titleBar">
+                            <span class="stepNum">2</span>
+                            <h2>Shipping Information</h2>
+                            <a href="javascript:;"><span>Edit</span><i></i></a>
+                        </div>
+                        <div class="operationBlock">
+                            <div class="inputUnit">
+                                <div class="label"><i>*</i>Select a shipping address from your address book or enter a new address.</div>
+                                <div class="selectBorder">
+                                    <select name="shipping[address]">
+                                        <option value="1">yin yafeng, 南山桃源村东 中爱大厦, 广州, 深圳 123456, 中国</option>
+                                        <option value="2">yin11 yafeng1111, 撒撒撒撒撒撒撒撒撒撒撒, ccc, zzzzzzz 11111, 中国</option>
+                                        <option value="3" selected="selected">yin yafeng122, 中国 北京 北京 西城区啊十大, 北京, 北京 433300, 中国</option>
+                                        <option value="">新地址</option>
+                                    </select>
+                                </div>
+                                <div class="warn">&nbsp;</div>
+                            </div>
+                            <div class="inputUnit halfLeft">
+                                <div class="label"><i>*</i>First Name</div>
+                                <div class="inputBorder"><input name="shipping[FN]" type="text"/></div>
+                                <div class="warn">请输入名字!</div>
+                            </div>
+                            <div class="inputUnit halfRight">
+                                <div class="label"><i>*</i>Last Name</div>
+                                <div class="inputBorder"><input name="shipping[LN]" type="text"/></div>
+                                <div class="warn">请输入姓氏!</div>
+                            </div>
+                            <div class="inputUnit halfLeft">
+                                <div class="label">Company</div>
+                                <div class="inputBorder"><input name="shipping[company]" type="text"/></div>
+                                <div class="warn">&nbsp;</div>
+                            </div>
+                            <div class="inputUnit">
+                                <div class="label"><i>*</i>Address</div>
+                                <div class="inputBorder"><input name="shipping[address]" type="text"/></div>
+                                <div class="warn">请输入地址!</div>
+                            </div>
+
+                            <div class="inputUnit halfLeft">
+                                <div class="label"><i>*</i>Country</div>
+                                <div class="selectBorder">
+                                    <select name="shipping[country]">
+                                        <option value="US" selected="selected">美国</option>
+                                    </select>
+                                </div>
+                                <div class="warn">请选择国家!</div>
+                            </div>
+                            <div class="inputUnit halfRight">
+                                <div class="label"><i>*</i>State/Province</div>
+                                <div class="selectBorder">
+                                    <select name="shipping[state]">
+                                        <option value="">请选择地区、州，或省</option>
+                                        <option title="Alabama" value="1">Alabama</option>
+                                        <option title="Alaska" value="2">Alaska</option>
+                                        <option title="American Samoa" value="3">American Samoa</option>
+                                        <option title="Arizona" value="4">Arizona</option>
+                                        <option title="Arkansas" value="5">Arkansas</option>
+                                        <option title="Armed Forces Africa" value="6">Armed Forces Africa</option>
+                                        <option title="Armed Forces Americas" value="7">Armed Forces Americas</option>
+                                        <option title="Armed Forces Canada" value="8">Armed Forces Canada</option>
+                                        <option title="Armed Forces Europe" value="9">Armed Forces Europe</option>
+                                        <option title="Armed Forces Middle East" value="10">Armed Forces Middle East</option>
+                                        <option title="Armed Forces Pacific" value="11">Armed Forces Pacific</option>
+                                        <option title="California" value="12">California</option>
+                                    </select>
+                                </div>
+                                <div class="warn">请输入州/省!</div>
+                            </div>
+                            <div class="inputUnit halfLeft">
+                                <div class="label"><i>*</i>City</div>
+                                <div class="inputBorder"><input name="shipping[city]" type="text"/></div>
+                                <div class="warn">请输入城市!</div>
+                            </div>
+                            <div class="inputUnit halfRight">
+                                <div class="label"><i>*</i>Zip/Postal Code</div>
+                                <div class="inputBorder"><input name="shipping[zip]" type="text"/></div>
+                                <div class="warn">请输入邮箱!</div>
+                            </div>
+                            <div class="inputUnit halfLeft">
+                                <div class="label"><i>*</i>Telephone</div>
+                                <div class="inputBorder"><input name="shipping[tel]" type="text"/></div>
+                                <div class="warn">请输入电话!</div>
+                            </div>
+                            <div class="inputUnit halfRight">
+                                <div class="label">Fax</div>
+                                <div class="inputBorder"><input name="shipping[fax]" type="text"/></div>
+                                <div class="warn">&nbsp;</div>
+                            </div>
+
+                            <div class="operationRow">
+                                <div>
+                                    <input type="checkbox" name="save_in_address"/><span>Save in address book</span>
+                                </div>
+                                <div>
+                                    <input type="checkbox"name="use_billing_address" /><span>Use Billing Address</span>
+                                </div>
+                            </div>
+
+                            <div class="continueRow">
+                                <a class="continueButton"  href="javascript:;">CONTINUE</a>
+                            </div>
+                            <div class="loadingRow">
+                                <img src="../../public/img/customer/loader.gif" />
+                                <span>Loading next step... </span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="shippingMethod">
+                        <div class="titleBar">
+                            <span class="stepNum">3</span>
+                            <h2>Shipping Method</h2>
+                            <a href="javascript:;"><span>Edit</span><i></i></a>
+                        </div>
+                        <div class="operationBlock">
+
+                            <div class="descript"></div>
+                            <div class="continueRow">
+                                <a class="continueButton"  href="javascript:;">CONTINUE</a>
+                            </div>
+                            <div class="loadingRow">
+                                <img src="../../public/img/customer/loader.gif" />
+                                <span>Loading next step... </span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="paymentInformation">
+                        <div class="titleBar">
+                            <span class="stepNum">4</span>
+                            <h2>Payment Information</h2>
+                            <a href="javascript:;"><span>Edit</span><i></i></a>
+                        </div>
+                        <div class="operationBlock">
+                            <ul>
+                                <li>
+                                    <div class="typeBlock"><input type="radio" name="group03" value="paypal" /><span>paypal</span></div>
+                                    <div class="paramBlock paypal">
+                                        <img src="../../public/img/customer/checkout/payPal.jpg" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="typeBlock"><input type="radio" name="group03" value="credit" /><span>Credit Card</span></div>
+                                    <div class="paramBlock credit">
+                                        <div class="inputUnit">
+                                            <div class="label"><i>*</i>Credit Card Type</div>
+                                            <div class="selectBorder">
+                                                <select name="cardType">
+                                                    <option value="">-- 请选择 --</option>
+                                                    <option value="AE">American Express</option>
+                                                    <option value="VI">Visa</option>
+                                                    <option value="MC">MasterCard</option>
+                                                    <option value="DI">Discover</option>
+                                                </select>
+                                            </div>
+                                            <div class="warn">请选择支付卡</div>
+                                        </div>
+                                        <div class="inputUnit">
+                                            <div class="label"><i>*</i>Credit Card Number</div>
+                                            <div class="inputBorder"><input name="carNumber" type="text"/></div>
+                                            <div class="warn">请输入卡号!</div>
+                                        </div>
+                                        <div class="inputUnit halfLeft">
+                                            <div class="label"><i>*</i>Expiration Date </div>
+                                            <div class="selectBorder">
+                                                <select name="month">
+                                                    <option value="" selected="selected">月</option>
+                                                    <option value="1">01 - 1月</option>
+                                                    <option value="2">02 - 2月</option>
+                                                    <option value="3">03 - 3月</option>
+                                                    <option value="4">04 - 4月</option>
+                                                    <option value="5">05 - 5月</option>
+                                                    <option value="6">06 - 6月</option>
+                                                    <option value="7">07 - 7月</option>
+                                                    <option value="8">08 - 8月</option>
+                                                    <option value="9">09 - 9月</option>
+                                                    <option value="10">10 - 10月</option>
+                                                    <option value="11">11 - 11月</option>
+                                                    <option value="12">12 - 12月</option>
+                                                </select>
+                                            </div>
+                                            <div class="warn">请选择月</div>
+                                        </div>
+                                        <div class="inputUnit halfRight">
+                                            <div class="label"></div>
+                                            <div class="selectBorder">
+                                                <select name="year">
+                                                    <option value="" selected="selected">年</option>
+                                                    <option value="2014">2014</option>
+                                                    <option value="2015">2015</option>
+                                                    <option value="2016">2016</option>
+                                                    <option value="2017">2017</option>
+                                                    <option value="2018">2018</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2022">2022</option>
+                                                    <option value="2023">2023</option>
+                                                    <option value="2024">2024</option>
+                                                </select>
+                                            </div>
+                                            <div class="warn">请选择年</div>
+                                        </div>
+                                        <div class="inputUnit halfLeft">
+                                            <div class="label"><i>*</i>Card Verification Number </div>
+                                            <div class="inputBorder"><input name="verificationNum" type="text"/></div>
+                                            <div class="warn">不要留空!</div>
+                                        </div>
+                                        <div class="inputUnit halfRight descript">
+                                            <a class="descript" href="javascript:;"><span>What is this?</span></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="continueRow">
+                                <a class="continueButton"  href="javascript:;">CONTINUE</a>
+                            </div>
+                            <div class="loadingRow">
+                                <img src="../../public/img/customer/loader.gif" />
+                                <span>Loading next step... </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="orderReview">
+                        <div class="titleBar">
+                            <span class="stepNum">5</span>
+                            <h2>Order Review</h2>
+                            <a href="javascript:;"><span>Edit</span><i></i></a>
+                        </div>
+                        <div class="operationBlock">
+                            <ul class="listBlock">
+                                <li class="headerRow">
+                                    <div class="paramCol">PRODUCT NAME</div>
+                                    <div class="quantityCol">QTY</div>
+                                    <div class="price">SUBTOTAL</div>
+                                </li>
+                            </ul>
+                            <ul class="totalBlock">
+                                <li><div class="label"></div><div class="priceCol"></div></li>
+                                <li><div class="label"></div><div class="priceCol"></div></li>
+                                <li><div class="label"><b></b></div><div class="priceCol"><b></b></div></li>
+                            </ul>
+                            <div class="continueRow">
+                                <div class="extra"><span>Forgot an Item?</span><a href="#">Edit Your Cart</a></div>
+                                <a class="continueButton"  href="javascript:;">PLACE ORDER</a>
+                            </div>
+                            <div class="loadingRow">
+                                <img src="../../public/img/customer/loader.gif" />
+                                <span>Loading next step... </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
 
                 <div class="common_clearFloat bottomSpace"></div>
             </div>

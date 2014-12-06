@@ -1,3 +1,10 @@
+if(!Object.create){
+    Object.create = function(o){
+        function F(){}
+        F.prototype = o;
+        return new F();
+    };
+}
 var EVE_ShoppingCarItem = function(deleteHandler){
     this.deleteHandler = deleteHandler;
 };
@@ -255,7 +262,7 @@ var EBE_MobileMenu = function(){
     });
 };
 var EBE_MobileToTop = function(){
-    var el = $(".common_mobile_toTop");console.log(el);
+    var el = $(".common_mobile_toTop");
     if( el.length == 0 ){return;}
     var html7BodyEl = $("html, body");
     var winEl = $(window);
