@@ -1118,6 +1118,7 @@ h1,h2,h3,h4,h5,h6{
     .common_categoryNavBar,
     .header .common_mainNavBar,
     .common_topNavigationBlock img,
+    .common_normalContent .common_leftPanel,
     .footer .servicesPanel ,
     .footer .bottomNav{
         display: none;
@@ -1125,6 +1126,9 @@ h1,h2,h3,h4,h5,h6{
     .common_help_rightPanel,
     .common_help_rightPanel .common_help_contentBlock {
         margin-left: 0;
+    }
+    .common_normalContent .common_rightPanel{
+        margin-left:0;
     }
     .common_topNavigationBlock{
         height: 40px;

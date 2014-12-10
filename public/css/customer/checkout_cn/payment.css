@@ -1,0 +1,128 @@
+.normalBlock .processPanel {
+    height: 43px;
+}
+.normalBlock .processPanel a{
+    position:relative;
+    display:block;
+    width: 25%;
+    float:left;
+    overflow: hidden;
+    height: 43px;
+    line-height: 43px;
+    color: #000;
+    font-size: 16px;
+}
+.normalBlock .processPanel a .head{
+    position:absolute;
+    left:0;
+    top:0;
+    height:43px;
+    width: 21px;
+}
+.normalBlock .processPanel a .textBlock{
+    margin: 0 21px;
+    text-align: center;
+    height:42px;
+    border-bottom: 1px solid #000;
+}
+.normalBlock .processPanel a .textBlock u{
+    text-decoration: none;
+}
+.normalBlock .processPanel a .tail{
+    position:absolute;
+    right:0;
+    top:0;
+    height:43px;
+    width: 21px;
+}
+
+.normalBlock .processPanel .current .textBlock{
+    height:43px;
+    border-bottom: none;
+    background-color: #df4141;
+}
+.normalBlock .processPanel .current{
+    color: #fff;
+}
+.normalBlock .processPanel .current .head{
+    background: url(../../../img/customer/icons.png) no-repeat -116px -73px;
+}
+.normalBlock .processPanel .current .tail{
+    background: url(../../../img/customer/icons.png) no-repeat -137px -73px;
+}
+
+.common_mainPanel .subTitleBar{
+    font-size: 14px;
+    margin-top: 35px;
+    font-weight: bold;
+}
+.common_mainPanel .selectBlock{
+    margin-top: 15px;
+    margin-left: -40px;
+}
+.common_mainPanel .selectBlock li{
+    position:relative;
+    width: 25%;
+    float: left;
+    margin-bottom: 15px;
+}
+.common_mainPanel .selectBlock li input{
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    margin-top: -8px;
+}
+.common_mainPanel .selectBlock li div{
+    margin: 0 0 0 60px;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+.common_mainPanel .selectBlock li img{
+    width: 100%;
+    max-width: 185px;
+}
+
+.actionRow{
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+.actionRow input{
+    background-color: #df4141;
+    border: medium none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    line-height: 38px;
+    width: 135px;
+}
+.bottomSpace{
+    height: 40px;
+}
+
+@media only screen and (max-width: 784px) {
+    .common_mainPanel .selectBlock li{
+        width: 50%;
+    }
+    .m7p_tSpacer ,
+    .m7p_top_navPanel,
+    .common_mainPanel .processPanel u {
+        display: none;
+    }
+    .common_mainPanel .subTitleBar {
+        padding: 0 10px;
+    }
+    .common_mainPanel .selectBlock {
+        padding: 0 10px;
+    }
+    .actionRow{
+        padding: 20px 10px 0 10px;
+    }
+    .actionRow input{
+        width: 100%;
+    }
+
+}
