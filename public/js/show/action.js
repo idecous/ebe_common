@@ -407,7 +407,7 @@ var EBE_HistoryManager = function(){
         liWidth = liEls.eq(0).width();
         liHeight = liEls.eq(0).height()+3;
         rowItemCount = Math.round(el.width()/ liWidth);
-        colItemCount = Math.round(el.height()/liHeight );console.log(el);
+        colItemCount = Math.round(el.height()/liHeight );
     }
     var imgCount = 0;
     var imgEls = el.find("ul img");
@@ -415,12 +415,12 @@ var EBE_HistoryManager = function(){
         if( imgEls.eq(index).prop("complete") ){
             init();
         }else{
-            imgEls.eq(index).onload(init);
+            imgEls[index].onload =init;
         }
     });
     function init(){
         imgCount++;
-        if( imgCount == imgEls.length ){
+        if( imgCount >= imgEls.length ){
             winEl.resize(resizeHandler);
             resizeHandler();
         }
