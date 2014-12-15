@@ -34,6 +34,9 @@ ul, ol, li {
 h1,h2,h3,h4,h5,h6{
     font-weight: normal;
 }
+input,button,select,textarea{
+    outline:none;
+}
 .common_enFontFamily{
     font-family: "Times New Roman";
 }
@@ -648,6 +651,8 @@ h1,h2,h3,h4,h5,h6{
     border: none;
     width: 100%;
     color: #000;
+    position: relative;
+    z-index: 10;
 }
 .comm_top_userGroup .search .popWin .borderContent input[type="submit"]{
     background-color: #4c4c4c;
