@@ -5,8 +5,9 @@ if(!Object.create){
         return new F();
     };
 }
-var EVE_ShoppingCarItem = function(deleteHandler){
+var EVE_ShoppingCarItem = function(deleteHandler,label01){
     this.deleteHandler = deleteHandler;
+    this.label01 = label01;
 };
 (function(){
     this.init = function(){
@@ -23,7 +24,18 @@ var EVE_ShoppingCarItem = function(deleteHandler){
         var tStr = this.paramEl.eq(3).text();
         this.count = parseInt( tStr.substr( tStr.lastIndexOf(":")+1 )  );
         tStr = this.paramEl.eq(2).text();
-        this.price = parseFloat( tStr.substr( 1 )  );
+
+        var charCode,fIndex = -1;
+        for(var i=0; i < tStr.length;i++){
+            charCode = tStr.charCodeAt(i);
+            if( charCode >= 48 && charCode<=57){
+                fIndex = i;
+                break;
+            }
+        }
+        this.price = parseFloat( tStr.substr(fIndex) );
+        this.unit =  tStr.substr(0,fIndex);
+
         tStr = this.paramEl.eq(1).text();
         this.size = $.trim( tStr.substr(tStr.lastIndexOf(":") + 1 ) );
         this.delBtnEl = el.find(".infoBlock>a");
@@ -35,7 +47,17 @@ var EVE_ShoppingCarItem = function(deleteHandler){
         var tStr = data.size;
         this.size = tStr.substr( tStr.lastIndexOf(":")+1 ) ;
         tStr = data.price;
-        this.price = parseFloat( tStr.substr(1) );
+        var charCode,fIndex = -1;
+        for(var i=0; i < tStr.length;i++){
+            charCode = tStr.charCodeAt(i);
+            if( charCode >= 48 && charCode<=57){
+                fIndex = i;
+                break;
+            }
+        }
+        this.price = parseFloat( tStr.substr(fIndex) );
+        this.unit =  tStr.substr(0,fIndex);
+
         tStr = data.num;
         this.count = parseInt( tStr.substr( tStr.lastIndexOf(":")+1 ) );
 
@@ -48,7 +70,7 @@ var EVE_ShoppingCarItem = function(deleteHandler){
         $("<div>"+ data.size+"</div>").appendTo( t01El );
         $("<div class='price'>"+ data.price+"</div>").appendTo( t01El );
         $("<div>"+ data.num+"</div>").appendTo( t01El );
-        this.delBtnEl = $("<a href='javascript:;'>删除</a>").appendTo( t01El );
+        this.delBtnEl = $("<a href='javascript:;'>"+this.label01+"</a>").appendTo( t01El );
         this.paramEl = this.el.find(".infoBlock>div");
 
         this.init();
@@ -58,7 +80,17 @@ var EVE_ShoppingCarItem = function(deleteHandler){
         var tStr = data.size;
         var size = tStr.substr( tStr.lastIndexOf(":")+1 ) ;
         tStr = data.price;
-        var price = parseFloat( tStr.substr(1) );
+        var charCode,fIndex = -1;
+        for(var i=0; i < tStr.length;i++){
+            charCode = tStr.charCodeAt(i);
+            if( charCode >= 48 && charCode<=57){
+                fIndex = i;
+                break;
+            }
+        }
+        var price = parseFloat( tStr.substr(fIndex) );
+        this.unit =  tStr.substr(0,fIndex);
+
         tStr = data.num;
         var count = parseInt( tStr.substr( tStr.lastIndexOf(":")+1 )  );
         if( name == this.name && data.id == this.id &&  size == this.size && price == this.price ){
@@ -72,7 +104,7 @@ var EVE_ShoppingCarItem = function(deleteHandler){
     };
 }).call(EVE_ShoppingCarItem.prototype);
 
-var EVE_ShoppingCar = function(deleteHandler){
+var EVE_ShoppingCar = function(deleteHandler,label01){
     var el = $(".comm_top_userGroup .shoppingcar");
     var popWinEl = el.find(".popWin");
 
@@ -99,13 +131,14 @@ var EVE_ShoppingCar = function(deleteHandler){
     var listEl = listContainerEl.find("ul");
 
     var totalPriceRowEl = el.find(".popWin .borderContent .statsRow");
+    var totalPriceUnitEl = totalPriceRowEl.find("b:eq(0)");
     var totalPriceEl = totalPriceRowEl.find("b:eq(1)");
     var toPayBtnEl = el.find(".popWin .borderContent .toPay");
 
     var items = [];
     var i,item,tLiEl = listEl.find("li");
     for( i=0; i < tLiEl.length ;i++){
-        item = new EVE_ShoppingCarItem(delItemHandler);
+        item = new EVE_ShoppingCarItem(delItemHandler,label01);
         item.buildByEl( tLiEl.eq(i) );
         items.push( item );
     }
@@ -134,6 +167,12 @@ var EVE_ShoppingCar = function(deleteHandler){
             gCount += items[i].count;
             gPrice += items[i].count * items[i].price;
         }
+        if( items.length > 0){
+            totalPriceUnitEl.text(  items[0].unit + " " );
+        }else{
+            totalPriceUnitEl.text("");
+        }
+
         if( items.length < 4 ){
             listContainerEl.height( items.length * 116 -1);
             listContainerEl.removeClass("scroll");
@@ -158,7 +197,7 @@ var EVE_ShoppingCar = function(deleteHandler){
             if( hasSame ){ break;}
         }
         if( !hasSame ){
-            item = new EVE_ShoppingCarItem(delItemHandler);
+            item = new EVE_ShoppingCarItem(delItemHandler,label01);
             item.buildByData( data );
             listEl.append(item.el);
             items.push( item );
@@ -319,6 +358,6 @@ $(function(){
     G_shoppingCar = new EVE_ShoppingCar(function(id,size){
         console.log("删除购物车商品(商品ID/尺寸)",id,size);
         //请求服务器
-    });
+    },"删除");
 
 });

@@ -135,12 +135,14 @@ var EBE_MobileFilter = function(){
     });
 };
 
-var EBE_ListItem = function(submitHandler,errorHandler,unit,bgUrl){
+var EBE_ListItem = function(submitHandler,errorHandler,unit,bgUrl,label01,label02){
     this.submitHandler = submitHandler;
     this.errorHandler = errorHandler;
     this.unit = unit;
     this.sizeIndex = -1;
     this.bgUrl = bgUrl;
+    this.label01 = label01;
+    this.label02 = label02;
 };
 (function(){
     this.init = function(){
@@ -195,21 +197,24 @@ var EBE_ListItem = function(submitHandler,errorHandler,unit,bgUrl){
         }
         this.sizeEl = tEl03.find("span");
         tEl03 = $("<div class='submitRow'></div>").appendTo(tEl02);
-        this.submitBtnEl = $("<input type='button' value='加入购物车'/>").appendTo(tEl03);
+        this.submitBtnEl = $("<input type='button' value='"+this.label01+"'/>").appendTo(tEl03);
 
         var descriptBlockEl = $("<div class='descriptBlock'></div>").appendTo(aEl);
         $("<h3 class='enFontFamily'>"+ data.enName+"</h3>").appendTo(descriptBlockEl);
         $("<h2>"+ data.cnName+"</h2>").appendTo(descriptBlockEl);
         var priceBlockEl = $("<div class='price'></div>").appendTo(descriptBlockEl);
 
-        $("<h1 class='enFontFamily'><i>"+ this.unit+"</i><b>"+
-        data.realPrice + "</b></h1><span>市场价：<i>"+ this.unit+"</i><b>"+
+        //$("<h1 class='enFontFamily'><i>"+ this.unit+"</i><b>"+
+        $("<h1 class='enFontFamily'><b>"+
+        //data.realPrice + "</b></h1><span>市场价：<i>"+ this.unit+"</i><b>"+
+        data.realPrice + "</b></h1><span>"+this.label02+"<b>"+
+
         data.otherPrice + "</b></span>").appendTo( priceBlockEl );
         this.init();
     };
 }).call(EBE_ListItem.prototype);
 
-var EBE_List = function(submitHandler,errorHandler,unit,bgUrl){
+var EBE_List = function(submitHandler,errorHandler,unit,bgUrl,label01,label02){
     this.submitHandler = submitHandler;
     this.errorHandler = errorHandler;
     this.unit = unit;
@@ -217,6 +222,8 @@ var EBE_List = function(submitHandler,errorHandler,unit,bgUrl){
     this.page = 0;
     this.isLoading = false;
     this.bgUrl = bgUrl;
+    this.label01 = label01;
+    this.label02 = label02;
     this.init();
 };
 (function(){
@@ -230,7 +237,7 @@ var EBE_List = function(submitHandler,errorHandler,unit,bgUrl){
     this.appendData = function(data,page){
         var i,item;
         for( i=0; i < data.length ;i++){
-            item = new EBE_ListItem(this.submitHandler ,this.errorHandler,this.unit,this.bgUrl);
+            item = new EBE_ListItem(this.submitHandler ,this.errorHandler,this.unit,this.bgUrl,this.label01,this.label02);
             item.buildWithData( data[i] );
             this.el.append( item.el );
         }
@@ -309,7 +316,7 @@ $(function(){
         });
     },function(){
         alert("请选择尺寸");
-    },"RMB","public/img/show/holder_280_409.png");
+    },"RMB","public/img/show/holder_280_409.png","加入购物车","市场价：");
 
     list.setLoadPageHandler(function(page){
         console.log("读取页面数据(页数)",page);

@@ -439,8 +439,9 @@ var EBE_AppointmentManager = function(){
     new EBE_AppointmentModule("en");
 };
 
-var EVE_ShoppingCarItem = function(deleteHandler){
+var EVE_ShoppingCarItem = function(deleteHandler,label01){
     this.deleteHandler = deleteHandler;
+    this.label01 = label01;
 };
 (function(){
     this.init = function(){
@@ -504,7 +505,7 @@ var EVE_ShoppingCarItem = function(deleteHandler){
         $("<div>"+ data.size+"</div>").appendTo( t01El );
         $("<div class='price'>"+ data.price+"</div>").appendTo( t01El );
         $("<div>"+ data.num+"</div>").appendTo( t01El );
-        this.delBtnEl = $("<a href='javascript:;'>删除</a>").appendTo( t01El );
+        this.delBtnEl = $("<a href='javascript:;'>"+this.label01+"</a>").appendTo( t01El );
         this.paramEl = this.el.find(".infoBlock>div");
 
         this.init();
@@ -537,7 +538,7 @@ var EVE_ShoppingCarItem = function(deleteHandler){
     };
 }).call(EVE_ShoppingCarItem.prototype);
 
-var EVE_ShoppingCar = function(deleteHandler){
+var EVE_ShoppingCar = function(deleteHandler,label01){
     var el = $(".comm_top_userGroup .shoppingcar");
     var popWinEl = el.find(".popWin");
 
@@ -571,7 +572,7 @@ var EVE_ShoppingCar = function(deleteHandler){
     var items = [];
     var i,item,tLiEl = listEl.find("li");
     for( i=0; i < tLiEl.length ;i++){
-        item = new EVE_ShoppingCarItem(delItemHandler);
+        item = new EVE_ShoppingCarItem(delItemHandler,label01);
         item.buildByEl( tLiEl.eq(i) );
         items.push( item );
     }
@@ -630,7 +631,7 @@ var EVE_ShoppingCar = function(deleteHandler){
             if( hasSame ){ break;}
         }
         if( !hasSame ){
-            item = new EVE_ShoppingCarItem(delItemHandler);
+            item = new EVE_ShoppingCarItem(delItemHandler,label01);
             item.buildByData( data );
             listEl.append(item.el);
             items.push( item );
@@ -773,6 +774,6 @@ $(function(){
     G_shoppingCar = new EVE_ShoppingCar(function(id,size){
         console.log("删除购物车商品(商品ID/尺寸)",id,size);
         //请求服务器
-    });
+    },"删除");
 
 });
