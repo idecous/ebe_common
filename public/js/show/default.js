@@ -467,7 +467,7 @@ var EVE_ShoppingCarItem = function(deleteHandler,label01){
                 break;
             }
         }
-        this.price = parseFloat( tStr.substr(fIndex) );
+        this.price = parseFloat( tStr.substr(fIndex).replace(",","") );
         this.unit =  tStr.substr(0,fIndex);
 
         tStr = this.paramEl.eq(1).text();
@@ -490,7 +490,7 @@ var EVE_ShoppingCarItem = function(deleteHandler,label01){
                 break;
             }
         }
-        this.price = parseFloat( tStr.substr(fIndex) );
+        this.price = parseFloat( tStr.substr(fIndex).replace(",","") );
         this.unit =  tStr.substr(0,fIndex);
 
         tStr = data.num;
@@ -523,7 +523,7 @@ var EVE_ShoppingCarItem = function(deleteHandler,label01){
                 break;
             }
         }
-        var price = parseFloat( tStr.substr(fIndex) );
+        var price = parseFloat( tStr.substr(fIndex).replace(",","") );
         this.unit =  tStr.substr(0,fIndex);
         tStr = data.num;
         var count = parseInt( tStr.substr( tStr.lastIndexOf(":")+1 )  );
@@ -615,8 +615,24 @@ var EVE_ShoppingCar = function(deleteHandler,label01){
         }
         count01El.text( gCount );
         count02El.text( gCount );
-        totalPriceUnitEl.text(   );
-        totalPriceEl.text(  gPrice.toFixed(2) );
+
+        var formatPrice = gPrice.toFixed(2);
+        var aArr = formatPrice.split(".");
+        var pHolderCount = 3 - aArr[0].length%3;
+        var pHolderStr = "";
+        for(i=0; i < pHolderCount;i++){
+            pHolderStr += " ";
+        }
+        var pStr = pHolderStr + aArr[0];
+        var pFragmentCount = pStr.length/3;
+        var pArr = [];
+        for(i=0; i < pFragmentCount;i++){
+            pArr.push(  pStr.substr( i*3,3) );
+        }
+        var lStr = aArr[1];
+        if( lStr.length == 1){ lStr+="0"}
+
+        totalPriceEl.text( $.trim( pArr.join(",") +"." + lStr ) );
         sideInfoPointEl.show();
         emptyInfoEl.hide();
         listContainerEl.show();

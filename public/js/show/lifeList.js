@@ -311,7 +311,7 @@ $(function(){
             imgUrl:"public/source/show/shoppingcar_001.jpg",
             name:"xxxxxx",
             size:"尺码:L",
-            price:"￥ 2121",
+            price:"￥ 2,121",
             num:"数量:1"
         });
     },function(){
