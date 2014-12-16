@@ -193,6 +193,10 @@
 .common_mainPanel .listBlock ul li .descriptBlock h4{
     font-size: 14px;
     line-height: 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 10px;
 }
 .common_mainPanel .listBlock ul li .descriptBlock h1{
     font-size: 18px;

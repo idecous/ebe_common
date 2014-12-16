@@ -356,6 +356,11 @@ var EBE_HeightPlaceholderManager = function(){
     resizeHandler();
 };
 
+var EBE_FooterManager = function(){
+    if( !window.isCommon_footer ){return;}
+    $(".footer .common_centerBlock").removeClass("common_centerBlock").addClass("common_footerCenterBlock");
+};
+
 var G_enable = true;
 var G_shoppingCar = null;
 $(function(){
@@ -365,6 +370,7 @@ $(function(){
         G_enable = false;
         return;
     }
+    new EBE_FooterManager();
     new EBE_TopUserSearch();
     new EBE_TopMobileSearch();
     new EBE_MobileMenu();

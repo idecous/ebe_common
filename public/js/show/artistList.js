@@ -28,7 +28,7 @@ var EBE_ListManager = function(totalPage,bgImg,loadPageHandler){
             '<a href="'+ data[i].url+'">'+
             '<div class="border"><img src="'+data[i].img+'"/></div>'+
             '<div class="descriptBlock"><h3>'+data[i].nameA
-            +'</h3><h4>'+data[i].nameB+'</h4><h1 class="enFontFamily"><span>'+data[i].currency
+            +'</h3><h4>'+data[i].nameB+'</h4><h1 class="enFontFamily"><span>'
             +'</span><b>'+data[i].price+'</b></h>'+
             +"</div></a></li>").appendTo(el);
         }

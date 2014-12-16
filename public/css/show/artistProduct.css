@@ -127,6 +127,42 @@
     font-size: 18px;
     margin-top: 5px;
 }
+
+
+.common_mainPanel .artistDescriptBlock{
+    width: 1200px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    position: relative;
+    margin: 20px auto 0 auto;
+    color: #333;
+}
+.common_mainPanel .artistDescriptBlock img{
+    position: absolute;
+    left: 0;
+    top: 15px;
+}
+.common_mainPanel .artistDescriptBlock .textBlock{
+    margin-left: 115px;
+}
+.common_mainPanel .artistDescriptBlock .textBlock p{
+    min-height: 100px;
+}
+.common_mainPanel .artistDescriptBlock .viewRow{
+    text-align: right;
+    margin-top: 5px;
+}
+.common_mainPanel .artistDescriptBlock .viewRow a{
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+    width: 80px;
+}
+
+
 .common_mainPanel .listBlock{
     width: 1200px;
     margin: 20px auto;
@@ -189,6 +225,10 @@
 .common_mainPanel .listBlock ul li .descriptBlock h4{
     font-size: 14px;
     line-height: 22px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 10px;
 }
 .common_mainPanel .listBlock ul li .descriptBlock h1{
     font-size: 18px;
