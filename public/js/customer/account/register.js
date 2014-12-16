@@ -73,9 +73,14 @@ var EBE_Register = function(patternAccount,patternPassword){
 
     var protocolSelectorEl =$(".protocolRow input");
     var protocolTextEls =$(".protocolRow span,.protocolRow a");
-
+    var serverErrorEl = $(".common_mainPanel .rightGroup .loginPanel .serverError");
     var formEl = $(".common_mainPanel .rightGroup .loginPanel .bg form");
+
+
+
     formEl.submit(function(){
+        serverErrorEl.css("visibility","hidden");
+
         var correct1 = accountRow.verify();
         if( correct1 ){
             topWarnEls.eq(0).hide();

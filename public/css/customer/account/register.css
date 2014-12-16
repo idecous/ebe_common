@@ -162,7 +162,6 @@ body,html{
     line-height: 43px;
 }
 .common_mainPanel .rightGroup .loginPanel .protocolRow{
-    margin-top: 10px;
     font-size: 12px;
     color: #fff;
 }
@@ -178,7 +177,14 @@ body,html{
 .common_mainPanel .rightGroup .loginPanel .protocolRow .warn{
     color: #f00;
 }
-
+.common_mainPanel .rightGroup .loginPanel .serverError{
+    color: #f00;
+    line-height: 26px;
+    visibility: hidden;
+}
+.common_mainPanel .rightGroup .loginPanel .serverError.show{
+    visibility: visible;
+}
 .common_mainPanel .rightGroup .loginPanel input[type="submit"]{
     display:block;
     width: 136px;
