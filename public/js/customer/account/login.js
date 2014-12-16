@@ -56,7 +56,10 @@ var EBE_Login = function(patternAccount,patternPassword){
     var accountRow = new EBE_LoginRow( labelEls.eq(0),rowEls.eq(0),patternAccount );
     var passwordRow = new EBE_LoginRow(labelEls.eq(1), rowEls.eq(1),patternPassword );
     var formEl = $(".common_mainPanel .rightGroup .loginPanel .bg form");
+    var serverErrorEl = $(".common_mainPanel .rightGroup .loginPanel .serverError");
+
     formEl.submit(function(){
+        serverErrorEl.css("visibility","hidden");
         var correct1 = accountRow.verify();
         if( !correct1 ){
             topWarnEls.eq(0).show();
@@ -77,8 +80,11 @@ var EBE_Login = function(patternAccount,patternPassword){
 };
 $(function(){
     new EBE_Background();
-    new EBE_Login( /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
+    var login = new EBE_Login( /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
         /^[a-zA-Z0-9!@#$%^&*]{6,16}$/i );
+
+
+
 
     $(".leftGroup .navBar a:eq(1)").click(function(){
         var url = window.location;
