@@ -164,6 +164,7 @@ body,html{
 .common_mainPanel .rightGroup .loginPanel .protocolRow{
     font-size: 12px;
     color: #fff;
+    margin-top: 5px;
 }
 .common_mainPanel .rightGroup .loginPanel .protocolRow input{
     vertical-align: -2px;
@@ -179,8 +180,9 @@ body,html{
 }
 .common_mainPanel .rightGroup .loginPanel .serverError{
     color: #f00;
-    line-height: 26px;
+    line-height: 16px;
     visibility: hidden;
+    margin-top: 4px;
 }
 .common_mainPanel .rightGroup .loginPanel .serverError.show{
     visibility: visible;
@@ -188,11 +190,11 @@ body,html{
 .common_mainPanel .rightGroup .loginPanel input[type="submit"]{
     display:block;
     width: 136px;
-    height: 39px;
+    height: 30px;
     background-color: #df4141;
-    line-height: 39px;
+    line-height: 30px;
     border: none;
-    margin: 20px auto;
+    margin: 15px auto;
     border-radius: 2px;
     cursor: pointer;
     color: #fff;

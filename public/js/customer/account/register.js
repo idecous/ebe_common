@@ -1,20 +1,20 @@
 var EBE_Background = function(){
     var windEl = $(window);
     var el = $(".common_mainPanel .bgImg");
-    if( el.attr("complete")){
+    var imgWidth = 0;
+    var imgHeight = 0;
+    if( el.prop("complete")){
         init();
     }else{
         el[0].onload = init;
     }
-    var imgWidth = 0;
-    var imgHeight = 0;
     function init(){
         imgWidth = el.width();
         imgHeight = el.height();
-        updateSizeHandler();
         el.addClass("show");
+        windEl.resize(updateSizeHandler);
+        updateSizeHandler();
     }
-    windEl.resize(updateSizeHandler);
     function updateSizeHandler(){
         var cWidth = windEl.width(),cHeight = windEl.height();
         var rate = Math.max( cWidth/imgWidth,cHeight/imgHeight );
