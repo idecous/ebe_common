@@ -88,7 +88,6 @@ var EBE_ListManager = function(totalPage,bgImg,loadPageHandler){
         setIsLoading(false);
     }
     winEl.resize(scroll7ResizeHandler).scroll(scroll7ResizeHandler);
-
     return {"appendData":appendData};
 };
 
@@ -106,7 +105,6 @@ function buildPageData(size){
     }
     return arr;
 }
-
 $(function(){
     new EBE_VideoManager();
     var list = new EBE_ListManager(totalPage,"public/img/show/artist_list_holder_item_border.png",function(page){
