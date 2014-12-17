@@ -65,14 +65,16 @@
 }
 .common_mainPanel .cartListBlock .summaryBlock li .label{
     margin-left:10px;
-    width: 145px;
+    width: 125px;
     text-align: right;
 }
 .common_mainPanel .cartListBlock .summaryBlock li .priceCol{
     position: absolute;
     top: 10px;
     right: 0;
-    width: 85px;
+    width: 125px;
+    text-align: right;
+    padding-right: 10px;
 }
 .common_mainPanel .cartListBlock .summaryBlock .total {
     font-size: 14px;
