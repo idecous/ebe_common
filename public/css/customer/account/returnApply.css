@@ -140,9 +140,6 @@
         width: auto;
         float: none;
     }
-    .common_rightPanel .formBlock li .contentCol .info{
-        visibility: visible;
-    }
     .common_rightPanel .formBlock li .contentCol .selectBorder{
         margin-top: 0;
     }

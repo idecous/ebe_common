@@ -162,7 +162,6 @@
     width: 80px;
 }
 
-
 .common_mainPanel .listBlock{
     width: 1200px;
     margin: 20px auto;
@@ -265,6 +264,9 @@
     .common_mainPanel .listBlock{
         width: 100%;
     }
+    .common_mainPanel .artistDescriptBlock{
+        width: 100%;
+    }
 }
 @media only screen and (max-width: 890px) {
     .common_mainPanel .listBlock ul li{
@@ -323,6 +325,26 @@
         font-size: 12px;
         white-space: nowrap;
     }
+    .common_mainPanel .artistDescriptBlock{
+        text-align: center;
+    }
+    .common_mainPanel .artistDescriptBlock img{
+        position: static;
+        width: 100%;
+        max-width: 92px;
+    }
+    .common_mainPanel .artistDescriptBlock .textBlock{
+        margin: 10px 10px 0 10px;
+        text-align: left;
+    }
+    .common_mainPanel .artistDescriptBlock .viewRow{
+        margin-top: 20px;
+    }
+    .common_mainPanel .artistDescriptBlock .viewRow a{
+        width: 100%;
+        line-height: 30px;
+    }
+
     .common_mainPanel .listBlock ul {
         text-align: center;
     }
