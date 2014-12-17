@@ -1,15 +1,11 @@
 .common_categoryNavBar{
-    top: 182px;
+    position: relative;
 }
-
 .header .top_logoBlockHolder{
-    height: 40px;
+    height: 70px;
     display: none;
 }
 .header .top_logoBlock{
-    position:absolute;
-    top:0;
-    left:0;
     width:100%;
     height:150px;
     text-align: center;
@@ -84,10 +80,6 @@
 }
 
 .header .mainNavBar{
-    position:absolute;
-    top:150px;
-    left:0;
-    width: 100%;
     border-top: 1px solid #999999;
     border-bottom: 1px solid #666;
     height: 30px;
@@ -110,27 +102,76 @@
     border-bottom: 2px solid #fff;
     cursor: default;
 }
-.header .bg{
+
+.header .top_videoBlock{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.header .top_videoBlock a{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+.header .top_videoBlock a img{
     width: 100%;
 }
-.common_mainPanel .keywordPanel{
-    text-align: center;
+.header .top_videoBlock a:hover .playBtn{
+    width: 118px;
+    height: 118px;
+    margin-top: -59px;
+    margin-left: -59px;
 }
-.common_mainPanel .keywordPanel i{
+.header .top_videoBlock a .playBtn{
+    display: block;
+    width: 98px;
+    height: 98px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -49px;
+    margin-left: -49px;
+    transition: all 0.25s ease-out 0s;
+}
+.header .top_videoPlaceholder{
+    width: 100%;
+}
+.header .top_videoBlock .video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.common_mainPanel{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.common_mainPanel .subNavBar{
+    padding-top: 35px;
+    border-bottom: 1px solid #ddd;
+}
+.common_mainPanel .subNavBar a{
+    position: relative;
     display: inline-block;
-    width: 21px;
-    height: 11px;
-    background: url(../../img/show/icons.png) no-repeat 0 -233px;
+    width: 70px;
+    text-align: center;
+    line-height: 32px;
+    bottom: -1px;
 }
-.common_mainPanel .keywordPanel div{
-    color: #333;
-    font-size: 18px;
-    margin-top: 5px;
+.common_mainPanel .subNavBar .current{
+    border-bottom: 2px solid #333;
 }
 .common_mainPanel .listBlock{
     width: 1200px;
     margin: 20px auto;
-    border-top: 1px solid #ddd;
 }
 .common_mainPanel .listBlock ul{
     margin-top: 20px;
@@ -211,19 +252,15 @@
 .common_mainPanel .loadingRow .text {
     font-size: 12px;
 }
-
+.common_mainPanel .bottomSpace{
+    height: 100px;
+}
 @media \0screen {
-    .header .top_logoBlock,
-    .header .mainNavBar{
-        background:url(../1pAlpha.png);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7A000000, endColorstr=#7A000000);
-    }
     .common_mainPanel .listBlock ul li .descriptBlock{
         background:url(../1pAlpha.png);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF);
     }
 }
-
 @media only screen and (max-width: 1220px) {
     .common_mainPanel .listBlock{
         width: 100%;
@@ -234,6 +271,7 @@
         width: 33.33%;
     }
 }
+
 @media only screen and (min-width: 784px) and (max-width: 1320px) {
     .header .top_logoBlock{
         position: static;
@@ -249,9 +287,6 @@
         position: static;
         background: #000;
     }
-    .common_categoryNavBar{
-        top: 132px;
-    }
 }
 @media only screen and (max-width: 785px) {
     .header .top_logoBlockHolder{
@@ -265,6 +300,7 @@
         line-height: 34px;
         border-bottom: 1px solid #999;
         left: auto;
+        top: 0;
     }
     .header .top_logoBlock img{
         margin-left: 60px;
@@ -280,11 +316,24 @@
         background:#000;
         line-height:20px;
         font-size: 12px;
+        width: 100%;
     }
     .header .mainNavBar li {
         width: 16.66%;
         font-size: 12px;
         white-space: nowrap;
+    }
+    .header .top_videoBlock a .playBtn{
+        width: 49px;
+        height: 49px;
+        margin-top: -24px;
+        margin-left: -24px;
+    }
+    .header .top_videoBlock a:hover .playBtn{
+        width: 58px;
+        height: 58px;
+        margin-top: -29px;
+        margin-left: -29px;
     }
     .common_mainPanel .listBlock ul {
         text-align: center;
@@ -293,5 +342,4 @@
         width: 100%;
         max-width: 292px;
     }
-
 }
