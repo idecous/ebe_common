@@ -104,10 +104,7 @@ var EBE_VideoSwf = function(swfID){
     playBtnEl.click(function(){
         playBtnEl.hide();
         $("#"+swfID)[0].firstPlay();
-
-
     });
-
 };
 var EBE_VideoManager = function(){
     if(!$("<video></video>").prop("canPlayType")){
