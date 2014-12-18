@@ -135,6 +135,7 @@
     border-bottom: 1px solid #333;
     padding-top: 63px;
     clear: both;
+    position: relative;
 }
 .common_mainPanel .subTitlePanel h1{
     font-size: 28px;
@@ -144,6 +145,21 @@
     font-size: 18px;
 }
 
+.common_mainPanel .subTitlePanel a{
+    display: inline-block;
+    border: 1px solid #666;
+    color: #666;
+    width: 75px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.common_mainPanel .subTitlePanel a:hover{
+    border: 1px solid #fff;
+    color: #fff;
+}
 
 .common_mainPanel .workGroup{
     margin: 20px 4px 0 4px;
@@ -382,6 +398,12 @@
         max-width: 350px;
         display: inline-block;
         margin-left: 0;
+    }
+    .common_mainPanel .subTitlePanel a {
+        position: static;
+        display: block;
+        margin: 10px;
+        width: auto;
     }
 
 }
