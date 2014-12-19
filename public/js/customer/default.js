@@ -377,7 +377,6 @@ $(function(){
     new EBE_MobileToTop();
     new EBE_HeightPlaceholderManager();
 
-
     G_shoppingCar = new EVE_ShoppingCar(function(id,size){
         console.log("删除购物车商品(商品ID/尺寸)",id,size);
         //请求服务器

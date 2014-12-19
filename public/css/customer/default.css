@@ -1016,6 +1016,39 @@ input,button,select,textarea{
     .common_categoryNavBar > li .subPopBlock{
         z-index: 60;
     }
+    .common_centerBlock{
+        width: 990px;
+    }
+    .common_footerCenterBlock{
+        width: 990px;
+    }
+    .footer .servicesPanel {
+        height: 165px;
+    }
+    .footer .servicesPanel .contact {
+        display: block;
+        padding-top: 30px;
+    }
+    .footer .servicesPanel .contact {
+        margin-left: 40px;
+    }
+    .footer .servicesPanel .contact li {
+        height: auto;
+        width: auto;
+    }
+    .footer .servicesPanel .contact .other {
+        display: inline-block;
+        position: static;
+    }
+    .footer .servicesPanel .contact .tel {
+        display: inline-block;
+        height: auto;
+        margin-left: 25px;
+        vertical-align: -5px;
+    }
+    .footer .bottomNav {
+        height: 100px;
+    }
 
 }
 
