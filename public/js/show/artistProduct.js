@@ -53,7 +53,7 @@ function buildPageData(size){
     }
     return arr;
 }
-$(function(){return;
+$(function(){
     var list = new EBE_ListManager(totalPage,"public/img/show/artist_list_holder_item_border.png",function(page){
         console.log("载入页面数据(页数)",page);
         //请求服务器

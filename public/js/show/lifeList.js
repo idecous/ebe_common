@@ -318,10 +318,12 @@ $(function(){
         alert("请选择尺寸");
     },"RMB","public/img/show/holder_280_409.png","加入购物车","市场价：");
 
+
     list.setLoadPageHandler(function(page){
         console.log("读取页面数据(页数)",page);
         //请求服务器
         list.appendData( getPageData(4) , page++ );
     });
 
+    list.appendData( getPageData(4) , 1 );
 });

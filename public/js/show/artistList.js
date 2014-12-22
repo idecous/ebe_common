@@ -5,7 +5,7 @@ var EBE_ListManager = function(totalPage,bgImg,loadPageHandler){
     var isLoading = false;
     var page = 1;
 
-    scroll7ResizeHandler = function(){
+    var scroll7ResizeHandler = function(){
         if( isLoading || page == totalPage){return;}
         var offsetTop = el.offset().top;
         var scrollTop = winEl.scrollTop();
@@ -16,13 +16,13 @@ var EBE_ListManager = function(totalPage,bgImg,loadPageHandler){
             loadPageHandler( page + 1 );
         }
     };
-    setIsLoading = function(val){
+    var setIsLoading = function(val){
         isLoading = val;
         loadingEl.css("visibility",val?"visible":"hidden");
     };
     function appendData(data,newPage){
         var i,item;
-        for( i=0; i < data.length ;i++){
+        for( i=0; i < data.length ;i++){console.log(data[i]);
             $("<li>"+
             '<img class="bg" src="'+bgImg+'" />'+
             '<a href="'+ data[i].url+'">'+
@@ -59,4 +59,5 @@ $(function(){
         //请求服务器
         list.appendData( buildPageData(12),page);
     });
+
 });
