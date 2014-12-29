@@ -216,6 +216,15 @@ input,button,select,textarea{
 .common_mobileNav ul li:hover{
     background-color: #181818;
 }
+.common_mobileNav ul li .lang{
+    display: inline;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    color: #aaa;
+    font-size: 12px;
+}
+
 .common_mobileNav ul .liftRow:hover{
     background: none;
 }
@@ -502,6 +511,13 @@ input,button,select,textarea{
 .comm_top_userGroup .shoppingcar .popWin .borderBottom{
     height: 0;
     border-bottom: 1px solid #666;
+}
+.comm_top_userGroup .lang{
+    padding: 0 15px;
+}
+.comm_top_userGroup .lang a{
+    color: #333;
+    font-size: 12px;
 }
 
 .header .common_mainNavBar{

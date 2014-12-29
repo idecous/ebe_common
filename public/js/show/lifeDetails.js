@@ -411,6 +411,7 @@ var EBE_ElementNav = function(el,total,changeHandler){
 var EBE_ElementGroup = function(){
     var winEl = $(window);
     var el =  $(".common_mainPanel .elementPanel");
+    if( el.length == 0 ){return;}
     var switchPanelEl = el.find(".switchPanel");
     var i,row,rows=[];
     var ulEl = switchPanelEl.find(".rowBlock");

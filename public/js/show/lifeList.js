@@ -273,6 +273,8 @@ var EBE_List = function(submitHandler,errorHandler,unit,bgUrl,label01,label02){
             item.buildWithEl( existItemEls.eq(i) );
         }
     };
+
+
 }).call(EBE_List.prototype);
 
 $(function(){
@@ -322,8 +324,9 @@ $(function(){
     list.setLoadPageHandler(function(page){
         console.log("读取页面数据(页数)",page);
         //请求服务器
-        list.appendData( getPageData(4) , page++ );
+        list.appendData( getPageData(1) , page++ );
     });
 
-    list.appendData( getPageData(4) , 1 );
+    list.isLoading = true;
+    list.appendData( getPageData(2) , 1 );
 });
