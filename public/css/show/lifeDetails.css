@@ -258,6 +258,7 @@
     font-size: 30px;
     margin-top: 35px;
     text-transform: uppercase;
+    margin-bottom:25px;
 }
 .common_mainPanel .detailPanel .rightBlock .paramPanel h3 b{
     font-weight: normal;
@@ -265,7 +266,7 @@
     margin-left: 10px;
 }
 .common_mainPanel .detailPanel .rightBlock .paramPanel .sizeGroup{
-    margin-top:25px;
+
     line-height: 69px;
     border-top: 1px solid #ddd;
 

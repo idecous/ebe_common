@@ -527,6 +527,7 @@ var EBE_GoodsParameter = function(sizeWarn,submitFn,favoritesFn,appendText){
         contentBtnEl.eq(contentIndex).addClass("checked");
         contentLiEl.eq(contentIndex).addClass("checked");
     });
+    var sizeRowEl = el.find(".sizeGroup");
     var priceEl = el.find("h3 b");
     var inventoryGroupEl = el.find(".inventory");
     var inventoryNumEl = inventoryGroupEl.find("b");
@@ -541,6 +542,11 @@ var EBE_GoodsParameter = function(sizeWarn,submitFn,favoritesFn,appendText){
             break;
         }
     }
+    if( sizeRowEl.length == 0 ){
+        inventoryGroupEl.css("visibility","visible");
+    }
+
+
     priceEls.click(function(){
         var tIndex = priceEls.index(this);
         if( sizeIndex == tIndex ||  priceEls.eq(tIndex).hasClass("unable") ){return;}
