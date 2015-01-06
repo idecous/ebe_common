@@ -267,8 +267,8 @@
 .common_mainPanel .detailPanel .rightBlock .paramPanel .sizeGroup{
     margin-top:25px;
     line-height: 69px;
-    border-bottom: 1px solid #ddd;
     border-top: 1px solid #ddd;
+
 }
 .common_mainPanel .detailPanel .rightBlock .paramPanel .label{
     width: 60px;
@@ -294,6 +294,11 @@
 .common_mainPanel .detailPanel .rightBlock .paramPanel .sizeGroup .list .checked{
     background-color: #ccc;
     border: 1px solid #000;
+}
+.common_mainPanel .detailPanel .rightBlock .paramPanel .sizeGroup .list .unable{
+    background: url("../../img/show/details_size_unable.jpg") no-repeat scroll 100% 100% rgba(0, 0, 0, 0);
+    color: #999;
+    cursor: default;
 }
 
 .common_mainPanel .detailPanel .rightBlock .paramPanel .colorGroup .list{
@@ -425,9 +430,64 @@
     vertical-align: -4px;
     margin-right: 4px;
 }
+
+.common_mainPanel .detailPanel .rightBlock .paramPanel .QtyRow{
+    border-bottom: 1px solid #ddd;
+}
+.common_mainPanel .detailPanel .rightBlock .paramPanel .QtyRow .list{
+    line-height: 40px;
+    margin-left: 65px;
+    padding: 16px 0;
+}
+.common_mainPanel .detailPanel .rightBlock .paramPanel .QtyRow .group{
+    display: inline-block;
+}
+.common_mainPanel .detailPanel .rightBlock .paramPanel .QtyRow .group a{
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #999;
+    line-height: 38px;
+    text-align: center;
+    font-size: 18px;
+    vertical-align: top;
+}
+.common_mainPanel .detailPanel .rightBlock .paramPanel .QtyRow .group a:hover{
+    background-color: #f0f0f0;
+}
+.common_mainPanel .detailPanel .rightBlock .paramPanel .QtyRow .group .inputBorder{
+    display:inline-block;
+    width: 68px;
+    height: 36px;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    vertical-align: top;
+    padding-top: 2px;
+}
+.common_mainPanel .detailPanel .rightBlock .paramPanel .QtyRow .group .inputBorder input{
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    color: #666;
+}
+.common_mainPanel .detailPanel .rightBlock .paramPanel .QtyRow .inventory{
+    display: inline;
+    vertical-align: bottom;
+    color: #666;
+    margin-left: 10px;
+    visibility: hidden;
+}
+.common_mainPanel .detailPanel .rightBlock .paramPanel .QtyRow .inventory b{
+    font-weight: normal;
+    vertical-align: bottom;
+}
+
+
 .common_mainPanel .detailPanel .rightBlock .paramPanel .colorGroup{
     clear: both;
     border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
 }
 
 .common_mainPanel .detailPanel .shapeBar{
@@ -757,7 +817,8 @@
         display: none;
     }
     .common_mainPanel .detailPanel .rightBlock .paramPanel .sizeGroup .list,
-    .common_mainPanel .detailPanel .rightBlock .paramPanel .colorGroup .list{
+    .common_mainPanel .detailPanel .rightBlock .paramPanel .colorGroup .list,
+    .common_mainPanel .detailPanel .rightBlock .paramPanel .QtyRow .list{
         margin: 0 0 0 10px;
     }
     .common_mainPanel .mobile_paramMessage{

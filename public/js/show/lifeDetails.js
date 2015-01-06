@@ -89,7 +89,6 @@ var EBE_GoodsPreview = function(levelCount){
         imgLoaded++;
         if(imgLoaded == imgTotal){init();}
     }
-
     var i,navigator;
     var mainViewBgEl = el.find(".mainView .holder");
     var navBgEl = el.find(".switchPanel .holder");
@@ -529,24 +528,35 @@ var EBE_GoodsParameter = function(sizeWarn,submitFn,favoritesFn,appendText){
         contentLiEl.eq(contentIndex).addClass("checked");
     });
     var priceEl = el.find("h3 b");
+    var inventoryGroupEl = el.find(".inventory");
+    var inventoryNumEl = inventoryGroupEl.find("b");
     var sizeIndex = -1;
     var priceEls = el.find(".sizeGroup .list a");
     for(var i=0; i < priceEls.length;i++){
         if( priceEls.eq(i).hasClass("checked")  ){
             sizeIndex = i;
             priceEl.text(  priceEls.eq(sizeIndex).attr("price") );
+            inventoryGroupEl.css("visibility","visible");
+            inventoryNumEl.text( priceEls.eq(sizeIndex).attr("qty") );
             break;
         }
     }
     priceEls.click(function(){
         var tIndex = priceEls.index(this);
-        if(sizeIndex == tIndex){return;}
+        if( sizeIndex == tIndex ||  priceEls.eq(tIndex).hasClass("unable") ){return;}
         if( sizeIndex != -1 ){
             priceEls.eq(sizeIndex).removeClass("checked");
         }
         sizeIndex = tIndex;
         priceEls.eq(sizeIndex).addClass("checked");
         priceEl.text(  priceEls.eq(sizeIndex).attr("price") );
+        inventoryGroupEl.css("visibility","visible");
+        inventoryNumEl.text( priceEls.eq(sizeIndex).attr("qty") );
+        var val = parseInt( qtyInputEl.val() );
+        var maxVal = parseInt( inventoryNumEl.text() );
+        if( val > maxVal ){
+            qtyInputEl.val(maxVal);
+        }
     });
     el.find(".appendShopping a span").click(appendGoodsHandler);
     el.find(".appendShopping a i").click(favoritesHandler);
@@ -574,11 +584,53 @@ var EBE_GoodsParameter = function(sizeWarn,submitFn,favoritesFn,appendText){
     var appendShoppingcarEl = $("<a class='appendShopping' href='javascript:;'>"+appendText+"</a>").appendTo(tEl);
     appendShoppingcarEl.click(appendGoodsHandler);
 
+    //--
+    var numcheck = /\d/;
+    var qtyInputEl = el.find(".QtyRow input");
+    qtyInputEl.keypress(function(e){
+        var keynum;
+        if(window.event){
+            keynum = e.keyCode;
+        }else if(e.which){
+            keynum = e.which;
+        }
+        if(keynum==8){
+            return true;
+        }
+        var keychar = String.fromCharCode(keynum);
+        return numcheck.test(keychar);
+    }).keyup(function(){
+        var val = parseInt( qtyInputEl.val() );
+        var maxVal = parseInt( inventoryNumEl.text() );
+        if( isNaN(val) ||  val < 1){
+            qtyInputEl.val(1);
+            return;
+        }
+        if( val > maxVal ){
+            qtyInputEl.val(maxVal);
+            return;
+        }
+    });
+    var numStepBtnEls = el.find(".QtyRow a");
+    numStepBtnEls.click(function(){
+        var val = parseInt( qtyInputEl.val() );
+        var maxVal = parseInt( inventoryNumEl.text() );
+        if( numStepBtnEls.index(this) == 1){
+            val++;
+        }else{
+            val--;
+        }
+        if(val>maxVal){val=maxVal;}
+        if(val<1){val=1;}
+        qtyInputEl.val(val);
+    });
+
+
     function appendGoodsHandler(){
         if(priceEls.length >0 && sizeIndex == -1){
             alert( sizeWarn );
         }else{
-            submitFn( priceEls.eq(sizeIndex).text() ,priceEls.eq(sizeIndex).attr("iid")  );
+            submitFn( priceEls.eq(sizeIndex).text() ,priceEls.eq(sizeIndex).attr("iid") , parseInt( qtyInputEl.val() ) );
         }
     }
     function favoritesHandler(){
@@ -591,8 +643,8 @@ $(function(){
     new EBE_GoodsPreview(2);
     new EBE_ElementGroup();
     new EBE_RecommendPanel();
-    new EBE_GoodsParameter("请选择尺寸！",function(size,sizeID){
-        console.log("添加到购物车(尺寸/尺寸ID)",size,sizeID);
+    new EBE_GoodsParameter("请选择尺寸！",function(size,sizeID,Qty){
+        console.log("添加到购物车(尺寸/尺寸ID/数量)",size,sizeID,Qty);
         //请求服务器
         G_shoppingCar.addGoods({
             id:"sc_02",
