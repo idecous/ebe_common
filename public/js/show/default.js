@@ -120,7 +120,6 @@ EBE_DataPickerMonthSelector.prototype = Object.create(EBE_DataPickerSelectorBase
         this.rightArrowEl.click(function(){
             that.setNextMonthHandler( that.value );
         });
-
         this.popBtnEl.click( $.proxy(this.openHandler,this) );
         this.inputEl.click( $.proxy(this.openHandler,this) );
         this.el.mouseleave($.proxy(this.closeHandler,this) );
@@ -128,7 +127,6 @@ EBE_DataPickerMonthSelector.prototype = Object.create(EBE_DataPickerSelectorBase
             that.closeHandler();
             that.setMonthHandler( that.monthUnitEls.index(this) );
         });
-
     };
     this.openHandler = function(){
         if( this.isBlockOpen ){return;}
@@ -613,8 +611,8 @@ var EVE_ShoppingCar = function(deleteHandler,label01){
             listContainerEl.height( 3 * 115 );
             listContainerEl.addClass("scroll");
         }
-        count01El.text( gCount );
-        count02El.text( gCount );
+        count01El.text( items.length );
+        count02El.text( items.length );
 
         var formatPrice = gPrice.toFixed(2);
         var aArr = formatPrice.split(".");

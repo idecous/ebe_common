@@ -180,8 +180,8 @@ var EVE_ShoppingCar = function(deleteHandler,label01){
             listContainerEl.height( 3 * 115 );
             listContainerEl.addClass("scroll");
         }
-        count01El.text( gCount );
-        count02El.text( gCount );
+        count01El.text( items.length );
+        count02El.text( items.length );
         var formatPrice = gPrice.toFixed(2);
         var aArr = formatPrice.split(".");
         var pHolderCount = 3 - aArr[0].length%3;
