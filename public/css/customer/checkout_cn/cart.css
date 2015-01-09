@@ -166,6 +166,48 @@
     color: #fff;
 }
 
+.common_mainPanel .reward{
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+.common_mainPanel .reward .title{
+    line-height: 38px;
+    border-bottom: 1px solid #ddd;
+    padding: 0 15px;
+    color: #333;
+    background-color: #f1f1f1;
+}
+.common_mainPanel .reward .infoRow{
+    line-height: 42px;
+    margin: 0 10px;
+    color: #666;
+}
+.common_mainPanel .reward .infoRow.separator{
+    border-bottom: 1px dotted #ddd;
+}
+.common_mainPanel .reward .submitRow{
+    line-height: 60px;
+    text-align: right;
+    padding: 0 20px;
+}
+.common_mainPanel .reward input[type=submit]{
+    width: 127px;
+    height: 30px;
+    line-height:30px;
+    background-color: #fff;
+    border: 1px solid #333;
+    text-align: center;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 12px;
+    vertical-align: -1px;
+    cursor: pointer;
+}
+.common_mainPanel .reward input[type=submit]:hover{
+    background-color: #333;
+    color: #fff;
+}
+
 .common_mainPanel .shippingTaxBlock{
     border: 1px solid #ddd;
     margin-top: 20px;
@@ -438,7 +480,8 @@
         width: 100%;
         margin-top: 10px;
     }
-    .common_mainPanel .updateRow .updateBtn {
+    .common_mainPanel .updateRow .updateBtn,
+    .common_mainPanel .reward input[type=submit]{
         width: 100%;
         margin-top: 10px;
     }
