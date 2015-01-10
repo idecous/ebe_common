@@ -102,16 +102,23 @@
     width: 16px;
     height: 16px;
     background: url("../../../img/customer/icons.png") no-repeat -24px -180px;
-
 }
 .common_mainPanel .updateRow{
     border: 1px solid #ddd;
     border-top: none;
     background-color: #f1f1f1;
-    height: 65px;
     line-height: 65px;
     padding: 0 20px;
     text-align: right;
+}
+.common_mainPanel .updateRow .reward{
+    text-align: left;
+    margin: 0 10px;
+    border-bottom: 1px dotted #ddd;
+    color: #666;
+}
+.common_mainPanel .updateRow span{
+    margin-right: 20px;
 }
 .common_mainPanel .updateRow .codeGroup{
     float: left;
@@ -166,47 +173,6 @@
     color: #fff;
 }
 
-.common_mainPanel .reward{
-    margin-top: 20px;
-    border: 1px solid #ddd;
-}
-.common_mainPanel .reward .title{
-    line-height: 38px;
-    border-bottom: 1px solid #ddd;
-    padding: 0 15px;
-    color: #333;
-    background-color: #f1f1f1;
-}
-.common_mainPanel .reward .infoRow{
-    line-height: 42px;
-    margin: 0 10px;
-    color: #666;
-}
-.common_mainPanel .reward .infoRow.separator{
-    border-bottom: 1px dotted #ddd;
-}
-.common_mainPanel .reward .submitRow{
-    line-height: 60px;
-    text-align: right;
-    padding: 0 20px;
-}
-.common_mainPanel .reward input[type=submit]{
-    width: 127px;
-    height: 30px;
-    line-height:30px;
-    background-color: #fff;
-    border: 1px solid #333;
-    text-align: center;
-    display: inline-block;
-    border-radius: 3px;
-    font-size: 12px;
-    vertical-align: -1px;
-    cursor: pointer;
-}
-.common_mainPanel .reward input[type=submit]:hover{
-    background-color: #333;
-    color: #fff;
-}
 
 .common_mainPanel .shippingTaxBlock{
     border: 1px solid #ddd;
