@@ -299,6 +299,10 @@ EBE_BillingModule_Logined.prototype = Object.create(EBE_ModuleBase.prototype);
                 name = name.substring( name.indexOf("[")+1, name.lastIndexOf("]")  );
                 data[ name ] = inputEl.val();
             }
+            for( i = 0; i < this.inputHiddenEls.length ;i++){
+                inputEl = this.inputHiddenEls.eq(i);
+                data[ inputEl.attr("name") ] = inputEl.val();
+            }
             return data;
         }
         return selectValue;
