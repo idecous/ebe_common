@@ -168,8 +168,12 @@ EBE_BillingModule_Unlogined.prototype = Object.create(EBE_ModuleBase.prototype);
         var data = {};
         var i,inputEl;
         var length = this.inputEls.length - (this.role=="register"?0:2);
-        for(var i=0; i< length;i++){
+        for(i=0; i< length;i++){
             inputEl = this.inputEls.eq(i);
+            data[ inputEl.attr("name") ] = inputEl.val();
+        }
+        for( i = 0; i < this.inputHiddenEls.length ;i++){
+            inputEl = this.inputHiddenEls.eq(i);
             data[ inputEl.attr("name") ] = inputEl.val();
         }
         return data;
@@ -218,6 +222,7 @@ EBE_BillingModule_Unlogined.prototype = Object.create(EBE_ModuleBase.prototype);
     };
     this.build = function(){
         this.inputEls = this.el.find("input[type=text],input[type=password],select");
+        this.inputHiddenEls = this.el.find("input[type=hidden]");
         this.warnEls = this.el.find(".inputUnit .warn");
         this.registerEls = this.el.find(".register");
         this.shipRadioEls = this.el.find("input[type=radio]");
@@ -274,6 +279,10 @@ EBE_BillingModule_Logined.prototype = Object.create(EBE_ModuleBase.prototype);
             inputEl = this.inputEls.eq(i);
             data[ inputEl.attr("name") ] = inputEl.val();
         }
+        for( i = 0; i < this.inputHiddenEls.length ;i++){
+            inputEl = this.inputHiddenEls.eq(i);
+            data[ inputEl.attr("name") ] = inputEl.val();
+        }
         data[this.addressSelectorEl.attr("name")]= this.addressSelectorEl.val();
         data[this.saveInputEl.attr("name")]= this.saveInputEl.prop("checked");
         data[this.shipRadioEls.attr("name") ] = this.shipRadioEls.filter(":checked").val();
@@ -320,6 +329,7 @@ EBE_BillingModule_Logined.prototype = Object.create(EBE_ModuleBase.prototype);
     this.build = function(){
         this.addressSelectorEl = this.el.find("select:eq(0)");
         this.inputEls = this.el.find("input[type=text],input[type=password],select:gt(0)");
+        this.inputHiddenEls = this.el.find("input[type=hidden]");
         this.warnEls = this.el.find(".inputUnit .warn:gt(0)");
 
         this.inputUnitEls = this.el.find(".inputUnit:gt(0)");
