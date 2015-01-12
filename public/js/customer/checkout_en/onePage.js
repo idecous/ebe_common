@@ -714,31 +714,33 @@ EBE_ReviewModule.prototype = Object.create(EBE_ModuleBase.prototype);
     this.setData = function(data){
         this.listEls.find("li:gt(0)").remove();
         var i,tdEls,tdEl;
-        var tabelEl = $(data);
-        var trEls = tabelEl.find("tbody tr");
+        var tableEl = $(data);
+        var trEls = tableEl.find("tbody tr");
         for( i=0; i < trEls.length;i++ ){
             tdEls = trEls.eq(i).find("td");
             $("<li><div class='paramCol'><h1>"+ tdEls.eq(0).text() +"</h1>"+
             "<div>"+tdEls.eq(1).text()+"</div></div><div class='quantityCol'>"+ tdEls.eq(2).text() +"</div>"+
             "<div class='price'><b>"+tdEls.eq(3).text()+"</b></div></li>").appendTo(this.listEls);
         }
-        trEls =  tabelEl.find("tfoot tr");
-        tdEls = trEls.eq(0).find("td");
-        this.totalLabelEls.eq(0).text(  tdEls.eq(0).text() );
-        this.totalPriceEls.eq(0).text(  tdEls.eq(1).text() );
+        trEls =  tableEl.find("tfoot tr");
 
-        tdEls = trEls.eq(1).find("td");
-        this.totalLabelEls.eq(1).text(  tdEls.eq(0).text() );
-        this.totalPriceEls.eq(1).text(  tdEls.eq(1).text() );
-
-        tdEls = trEls.eq(2).find("td");
-        this.totalLabelEls.eq(2).text(  tdEls.eq(0).text() );
-        this.totalPriceEls.eq(2).text(  tdEls.eq(1).text() );
+        for(i=0; i <trEls.length-1 ;i++){
+            tdEls = trEls.eq(i).find("td");
+            if(tdEls.length!=2){
+                $('<li><div class="label">'+ trEls.eq(i).find("th").text() +'</div><div class="priceCol">'+
+                tdEls.eq(0).text() +'</div></li>').appendTo(this.totalBlockEl);
+            }else{
+                $('<li><div class="label">'+ tdEls.eq(0).text() +'</div><div class="priceCol">'+
+                tdEls.eq(1).text() +'</div></li>').appendTo(this.totalBlockEl);
+            }
+        }
+        tdEls = trEls.eq(trEls.length-1).find("td");
+        $('<li><div class="label"><b>'+tdEls.eq(0).text()+'</b></div><div class="priceCol"><b>'+
+        tdEls.eq(1).text()+'</b></div></li>').appendTo(this.totalBlockEl);
     };
     this.build = function(){
         this.listEls = this.el.find(".listBlock");
-        this.totalLabelEls = this.el.find(".totalBlock li>.label:empty,.totalBlock li>.label>b ");
-        this.totalPriceEls = this.el.find(".totalBlock li>.priceCol:empty,.totalBlock li>.priceCol>b ");
+        this.totalBlockEl = this.el.find(".totalBlock");
         this.continueEl = this.el.find(".continueButton");
     };
 }).call(EBE_ReviewModule.prototype);
@@ -855,7 +857,8 @@ var EBE_CheckOutManager = function(patterns){
 var countID =600;
 
 var rateData = "<dl class='sp-methods'><dt>Flat Rate</dt><dd><ul><li><span class='no-display'><input name='shipping_method' type='radio' value='flatrate_flatrate' id='s_method_flatrate_flatrate' checked='checked'></span><label for='s_method_flatrate_flatrate'>Fixed<span class='price'>US$5.00</span></label></li></ul></dd></dl>";
-var reviewData = "<table id = 'checkout-review-table' class = 'data-table'><colgroup><col><col width = '1'><col width = '1'><col width = '1'></colgroup><thead><tr class = 'first last'><th rowspan = '1'> 产品名 </th><th class = 'a-center' colspan = '1'> 价格 </th><th class = 'a-center' rowspan = '1'> 数量 </th><th class = 'a-center' colspan = '1'> 小计 </th></tr></thead><tfoot><tr class = 'first'><td colspan = '3' class = 'a-right' style = ''> 小计 </td><td class = 'a-right last' style = ''><span class = 'price'> US$2, 600.00 </span></td></tr><tr><td colspan = '3' class = 'a-right' style = ''> 运费和手续费 (Flat Rate - Fixed) </td><td class = 'a-right last' style = ''><span class = 'price'> US$5.00 </span></td></tr><tr class = 'last'><td colspan = '3' class = 'a-right' style = ''><strong> 总计 </strong></td><td class = 'a-right last' style = ''><strong> <span class = 'price'> US$2, 605.00 </span></strong></td></tr></tfoot><tbody><tr class = 'first last odd'><td><h3 class = 'product-name'> 绿野仙踪组连体泳衣 </h3></td><td class = 'a-right'><span class = 'cart-price'> <span class = 'price'> US$2, 600.00 </span> </span></td><td class = 'a-center'> 1 </td><td class = 'a-right last'><span class = 'cart-price'> <span class = 'price'> US$2, 600.00 </span> </span></td></tr></tbody></table>";
+var reviewData ='<table class="data-table" id="checkout-review-table"><colgroup><col>      <col width="1"><col width="1"><col width="1"></colgroup><thead><tr class="first last"><th rowspan="1">产品名</th><th colspan="1" class="a-center">价格</th><th rowspan="1" class="a-center">数量</th><th colspan="1" class="a-center">小计</th></tr></thead>      <tfoot><tr class="first"><td style="" class="a-right" colspan="3">小计</td><td style="" class="a-right last"><span class="price">US$4,446.00</span></td></tr><tr><th colspan="3" style="" class="a-right totals-rewards">折扣（75 points used）</th><td style="" class="a-right last"><span class="price">-US$1.50</span></td></tr><tr><td style="" class="a-right" colspan="3">运费和手续费 (Flat Rate - Fixed)</td><td style="" class="a-right last"><span class="price">US$20.00</span></td></tr><tr class="last"><td style="" class="a-right" colspan="3"><strong>总计</strong></td>  <td style="" class="a-right last"> <strong><span class="price">US$4,464.50</span></strong></td></tr></tfoot><tbody><tr class="first odd">  <td><h3 class="product-name">test---</h3></td>      <td class="a-right"><span class="cart-price"><span class="price">US$1.00</span>                  </span></td><td class="a-center">2</td>      <td class="a-right last"><span class="cart-price"><span class="price">US$2.00</span></span></td>      </tr><tr class="last even">  <td><h3 class="product-name">绿野仙踪组连体泳衣llll</h3></td>      <td class="a-right"><span class="cart-price"><span class="price">US$2,222.00</span>                  </span></td><td class="a-center">2</td>      <td class="a-right last"><span class="cart-price">                          <span class="price">US$4,444.00</span></span></td></tr></tbody></table>';
+
 
 
 function getReviewData( size ){
