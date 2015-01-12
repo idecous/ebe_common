@@ -368,7 +368,6 @@ EBE_ShippingModule_Unlogined.prototype = Object.create(EBE_ModuleBase.prototype)
         this.copyInputEl.change(function(){
             that.copyByBilling();
         });
-
         this.continueEl.click(function(){
             if( !that.verify() ){ return;}
             var tData =  that.getData();
@@ -444,6 +443,7 @@ EBE_ShippingModule_Logined.prototype = Object.create(EBE_ModuleBase.prototype);
         var that = this;
         this.addressSelectorEl.change(function(){
             that.updateStatus();
+            that.copyInputEl.prop("checked",false);
         });
         this.copyInputEl.change(function(){
             that.copyByBilling();
