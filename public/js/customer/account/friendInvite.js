@@ -1,6 +1,7 @@
 var EBE_SubmitManager = function(warnMessage,patternEmail){
     var formEl = $(".common_mainPanel .bottomBlock .emailInputRow form");
     var inputEl = formEl.find("input[type='text']");
+    var inputHiddenEl = formEl.find("input[type='hidden']");
     var infoEl = $(".common_mainPanel .bottomBlock .emailInputRow .cell .inputBorder span");
     inputEl.focus(function(){
         infoEl.hide();
@@ -15,6 +16,7 @@ var EBE_SubmitManager = function(warnMessage,patternEmail){
             alert(warnMessage);
             return false;
         }
+        inputHiddenEl.val( $.trim( inputEl.val() ) );
     });
 };
 $(function(){
