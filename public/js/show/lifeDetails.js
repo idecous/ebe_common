@@ -571,6 +571,8 @@ var EBE_GoodsParameter = function(sizeWarn,submitFn,favoritesFn,appendText){
     var mobileMessageEl = $("<div class='mobile_paramMessage'></div>");
     $(".common_mainPanel .detailPanel .shapeBar").after(mobileMessageEl);
     var messageTitleEls = messageBlockEl.find(".tabBar li");
+    messageTitleEls.css("width",(1/messageTitleEls.length)*100+"%");
+
     var messageContentEls = messageBlockEl.find(".contentBlock li");
     var sizeBlock = $(".common_mainPanel .sizeDataPanel");
 

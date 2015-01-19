@@ -275,7 +275,6 @@
 }
 .common_mainPanel .actionElementBlock .borderBlock .itemPanel .itemBlock .item .border h4{
     font-size: 14px;
-    color: #c00;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -601,7 +600,6 @@
 }
 .common_mainPanel .coherentPanel li a .descriptBlock h4{
     font-size: 14px;
-    color: #cc0000;
     overflow: hidden;
     text-overflow: ellipsis;
 }

@@ -262,7 +262,6 @@
 }
 .common_mainPanel .detailPanel .rightBlock .paramPanel h3 b{
     font-weight: normal;
-    color: #c00;
     margin-left: 10px;
 }
 .common_mainPanel .detailPanel .rightBlock .paramPanel .sizeGroup{
@@ -624,7 +623,7 @@
     line-height: 32px;
 }
 .common_mainPanel .elementPanel .switchPanel .rowBlock  .rightBlock .itemsBlock ul li .price{
-    color: #cc0000;
+
 }
 .common_mainPanel .elementPanel .switchPanel .rowBlock  .rightBlock .itemsBlock .arrow{
     display: block;
@@ -729,7 +728,6 @@
     font-size: 18px;
 }
 .common_mainPanel .recommendPanel .contentBlock ul li a .descriptBlock h3 b{
-    color: #cc0000;
     margin-left: 6px;
     font-weight: normal;
 }

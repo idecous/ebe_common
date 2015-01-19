@@ -10,6 +10,7 @@ html,body {
 }
 body{
     visibility: hidden;
+    text-transform:  capitalize;
 }
 html, button, input, select, textarea {
     font: normal 14px "Microsoft YaHei","Times New Roman","Arial","Helvetica","Verdana","sans-serif";
