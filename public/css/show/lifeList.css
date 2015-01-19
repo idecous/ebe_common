@@ -650,6 +650,7 @@
     right:0;
     font-size: 12px;
     color: #666;
+    display: none;
 }
 .common_mainPanel .listPanel>ul li .contentBlock .descriptBlock .price span b{
     font-weight: normal;
