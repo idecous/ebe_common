@@ -881,19 +881,19 @@ input,button,select,textarea{
     height:18px;
     line-height:18px;
     float: left;
-    border-left: 1px solid #333;
+    border-left: 1px solid #999;
 }
 .footer .bottomNav ul li:first-child{
     border-left:none;
 }
 .footer .bottomNav ul li a{
     display: block;
-    color: #333;
+    color: #999;
 }
 .footer .bottomNav .copyright{
     display:inline-block;
     margin-left: 150px;
-    color: #333;
+    color: #999;
     text-transform: uppercase;
 }
 .footer .mobilFooter{
