@@ -2,10 +2,9 @@
    position: relative;
    background-color: #f3f3f3;
 }
-.comm_top_userGroup{
-    color: #333;
-}
-.comm_top_userGroup .account a{
+.comm_top_userGroup,
+.comm_top_userGroup .account a,
+.comm_top_userGroup .lang a {
     color: #333;
 }
 .common_categoryNavBar li .btnBlock a{
