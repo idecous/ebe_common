@@ -877,11 +877,12 @@ input,button,select,textarea{
     display: inline-block;
 }
 .footer .bottomNav ul li{
-    width: 80px;
-    height:18px;
-    line-height:18px;
+    font-size: 12px;
+    height:16px;
+    line-height:16px;
     float: left;
     border-left: 1px solid #999;
+    padding: 0 8px;
 }
 .footer .bottomNav ul li:first-child{
     border-left:none;
